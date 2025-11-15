@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+
+body {
+  color: #1a1a1a;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 1.5s ease-out forwards;
+}
+
+/* Custom scrollbar hiding */
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Animation classes */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animated-card {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animated-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Custom blue and gold theme */
+.bg-gradient-blue {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+}
+
+.text-blue-gradient {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.border-blue-gradient {
+  border-image: linear-gradient(135deg, #2563eb, #1d4ed8) 1;
+}
+
+/* Chart container styles */
+.chart-container {
+  background: linear-gradient(145deg, #f8fafc, #e2e8f0);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.1);
+}
