@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { 
   GraduationCap, 
   Signal, 
@@ -20,6 +20,21 @@ interface Service {
 }
 
 const Services: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleLearnMoreClick = (path: string) => {
+    // Scroll to top first
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+    
+    // Then navigate after a small delay to ensure scroll completes
+    setTimeout(() => {
+      navigate(path);
+    }, 300);
+  };
+
   const services: Service[] = [
     {
       icon: <GraduationCap className="w-8 h-8 text-blue-600" />,
@@ -150,12 +165,12 @@ const Services: React.FC = () => {
                   <span className="inline-block bg-blue-600 text-white px-3 py-1 rounded-lg text-sm font-bold font-['Inter']">
                     {service.price}
                   </span>
-                  <Link 
-                    to={service.path}
+                  <button 
+                    onClick={() => handleLearnMoreClick(service.path)}
                     className="flex items-center gap-1 text-blue-600 hover:text-blue-800 transition-colors text-sm font-semibold font-['Inter'] group-hover:translate-x-1 transition-transform"
                   >
                     Learn More <ArrowRight size={16} />
-                  </Link>
+                  </button>
                 </div>
               </div>
             </div>

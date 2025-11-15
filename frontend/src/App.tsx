@@ -56,7 +56,7 @@ function HomePage() {
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-black">
+      <div className="min-h-screen bg-white">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/training-course" element={<TrainingCourse />} />
