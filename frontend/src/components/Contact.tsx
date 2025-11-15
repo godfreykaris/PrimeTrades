@@ -56,8 +56,6 @@ I'm ready to start my trading journey! Please provide me with more information.`
   const handleSubmit = (e: React.FormEvent): void => {
     e.preventDefault();
     
-    // Show success message
-    alert("Redirecting you to WhatsApp to complete your enrollment...");
     
     // Redirect to WhatsApp with pre-filled message
     redirectToWhatsApp(formData);
@@ -229,7 +227,7 @@ I'm ready to start my trading journey! Please provide me with more information.`
             type="submit"
             className="w-full bg-blue-600 text-white font-bold py-4 px-8 rounded-lg hover:bg-blue-700 transition-colors duration-300 mt-4 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 font-['Plus_Jakarta_Sans'] text-lg"
           >
-            Contact Us on WhatsApp
+            Submit
           </button>
 
           <p className="text-center text-gray-600 text-sm font-['Inter'] mt-4">
